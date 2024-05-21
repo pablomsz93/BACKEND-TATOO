@@ -7,34 +7,39 @@ module.exports = {
       "services",
       [
         {
+          id: 1,
           service_name: "Tatuajes personalizados",
           description:
-            "Los clientes tendrán la libertad de seleccionar motivos y diseños únicos,personalizando completamente su experiencia de tatuaje de acuerdo a sus preferencias y gustos",
+            "Los clientes tendrán la libertad de seleccionar motivos y diseños únicos, personalizando completamente su experiencia de tatuaje de acuerdo a sus preferencias y gustos.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
+          id: 2,
           service_name: "Tatuajes del catálogo",
           description:
-            "Ofrecemos ía realización de tatuajes basados en diseños predefinidos en nuestro catálogo. Los clientes pueden elegir entre una variedad de opciones estilizadas y probadas.",
+            "Ofrecemos la realización de tatuajes basados en diseños predefinidos en nuestro catálogo. Los clientes pueden elegir entre una variedad de opciones estilizadas y probadas.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
+          id: 3,
           service_name: "Restauración y rejuvenecimiento de trabajos",
           description:
-            "Nos especializamos en ía restauración y rejuvenecimiento de tatuajes existentes. Nuestros expertos trabajan para mejorar y renovar tatuajes antiguos, devolviéndoles su vitalidad.",
+            "Nos especializamos en la restauración y rejuvenecimiento de tatuajes existentes. Nuestros expertos trabajan para mejorar y renovar tatuajes antiguos, devolviéndoles su vitalidad.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          service_name: "Colocación de piercings y ditatadores",
+          id: 4,
+          service_name: "Colocación de piercings y dilatadores",
           description:
-            ": Ofrecemos servicios profesionales para ía colocación de piercings y dilatadores. Nuestro equipo garantiza procedimientos seguros y estilos variados para satisfacer ías preferencias individuales de nuestros clientes.",
+            "Ofrecemos servicios profesionales para la colocación de piercings y dilatadores. Nuestro equipo garantiza procedimientos seguros y estilos variados para satisfacer las preferencias individuales de nuestros clientes.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
+          id: 5,
           service_name: "Venta de piercings y otros artículos",
           description:
             "Además de nuestros servicios de aplicación, ofrecemos una selección de piercings y otros artículos relacionados con el arte corporal. Los clientes pueden adquirir productos de calidad para complementar su estilo único.",
