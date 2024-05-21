@@ -10,28 +10,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       first_name: {
-        type: Sequelize.STRING(255),
-        allowNull:false,
+        type: Sequelize.STRING
       },
       last_name: {
-        type: Sequelize.STRING(255),
-        allowNull:false,
+        type: Sequelize.STRING
       },
-      email:{
-        type: Sequelize.STRING(255),
-        allowNull:false,
-        unique:true,
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
       },
-      password_hash:{
-        type: Sequelize.STRING(255),
-        allowNull:false,
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      role_id:{
-        type:Sequelize.INTEGER,
-        allowNull:false,
-        references:{
-          model:"roles",
-          key:"id",
+      is_active: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
+      },
+      role_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'roles',
+          key: 'id'
         }
       },
       createdAt: {
