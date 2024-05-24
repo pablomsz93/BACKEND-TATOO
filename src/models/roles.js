@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     
     static associate(models) {
       roles.hasMany(models.users,{
-        as: users,
-        foreignKey:"role_id"
+        as: "users",
+        foreignKey:"role_id",
         
       })
     }

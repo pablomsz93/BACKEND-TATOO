@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       users.belongsTo(models.roles,{
         as:"roles",
         foreignKey:"role_id"
+      });
+      users.hasMany(models.appointments,{
+        as:"appointments",
+        foreignKey: "user_id",
       })
     }
   }

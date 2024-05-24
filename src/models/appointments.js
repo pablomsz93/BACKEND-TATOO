@@ -2,19 +2,27 @@
 const {
   Model
 } = require('sequelize');
+const users = require('./users');
+const { FOREIGNKEYS } = require('sequelize/lib/query-types');
 module.exports = (sequelize, DataTypes) => {
   class appointments extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate(models) {
-      // define association here
+      appointments.belongsTo(models.users,{
+        as: "users",
+        foreignKey: "user_id",
+
+      });
+      appointments.belongsTo(model.services,{
+        as:"services",
+        foreignKey:"service_id",
+      })
     }
   }
   appointments.init({
-    name: DataTypes.STRING
+    appointment_date:DataTypes.DATE,
+    
+
   }, {
     sequelize,
     modelName: 'appointments',
