@@ -2,24 +2,25 @@
 const {
   Model
 } = require('sequelize');
-const users = require('./users');
+
 module.exports = (sequelize, DataTypes) => {
-  class roles extends Model {
+  class Role extends Model {
     
     static associate(models) {
-      roles.hasMany(models.users,{
+      Role.hasMany(models.User,{
         as: "users",
         foreignKey:"role_id",
         
       })
     }
   }
-  roles.init({
+  Role.init({
     name: DataTypes.STRING,
     
   }, {
     sequelize,
-    modelName: 'roles',
+    modelName: 'Role',
+    tableName:"roles",
   });
-  return roles;
+  return Role;
 };
