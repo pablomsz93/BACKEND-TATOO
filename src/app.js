@@ -1,6 +1,8 @@
 const express = require ("express")
 const dotenv = require("dotenv")
 const sequelize = require("./database/db")
+const apiRoutes = require("./routes");
+
 
 dotenv.config();
 
@@ -9,6 +11,9 @@ const app = express()
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000
+
+app.use("/api", apiRoutes);
+
 
 app.post("/api/auth/register",(req,res)=>{
   res.status(200).json({
