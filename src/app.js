@@ -13,12 +13,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use("/api", apiRoutes);
 
-app.post("/api/auth/login", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Usuario logeado",
-  });
-});
+
 
 app.get("/api/users", (req, res) => {
   res.status(200).json({

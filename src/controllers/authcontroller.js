@@ -1,14 +1,14 @@
 const { User, Role } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { Model, where } = require("sequelize");
+
 const authController = {};
 
 authController.register = async (req,res) => {
     try{
         const {first_name,last_name,email,password,role_id} = req.body;
 
-        if (!first_name || !last_name || email || !password || role_id){
+        if (!first_name || !last_name || !email || !password || role_id){
             return res.status(400).json({
                 success:true,
                 message:"Campos de registro incorrectos"
