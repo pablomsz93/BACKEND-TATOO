@@ -15,19 +15,7 @@ app.use("/api", apiRoutes);
 
 
 
-app.get("/api/users", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Viendo usuarios",
-  });
-});
 
-app.get("/api/users/profile", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Perfil usuarios",
-  });
-});
 
 app.put("/api/users/profile", (req, res) => {
   res.status(200).json({
