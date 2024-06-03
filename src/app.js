@@ -17,12 +17,6 @@ app.use("/api", apiRoutes);
 
 
 
-app.put("/api/users/profile", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Datos modificados",
-  });
-});
 
 app.get("/api/users/email=ejemplo@ejemplo.com", (req, res) => {
   res.status(200).json({
@@ -31,12 +25,6 @@ app.get("/api/users/email=ejemplo@ejemplo.com", (req, res) => {
   });
 });
 
-app.delete("/api/users/:id", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Eliminar usuario",
-  });
-});
 
 app.put("/api/users/:id/role", (req, res) => {
   res.status(200).json({
