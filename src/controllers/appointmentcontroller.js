@@ -1,4 +1,4 @@
-const { Appointment} = require("../models");
+const { Appointment,User,Service} = require("../models");
 
 const appointmentController = {};
 
@@ -59,5 +59,37 @@ appointmentController.update = async (req, res) => {
    }
 };
 
+appointmentController.getById = async (req, res) => {
+   const appointmentId = req.params.id;
 
+   try {
+      const appointment = await Appointment.findByPk(appointmentId, {
+         include: [
+            
+               { model: User, as: "users" }, 
+               { model: Service, as: "services" },
+            
+         ],
+         attributes: { exclude: ["createdAt", "updatedAt", "author_id"] },
+      });
+      if (!appointment) {
+         return res.status(404).json({
+            success: true,
+            message: "Cita no encontrada",
+         });
+      }
+
+      res.status(200).json({
+         success: true,
+         message: "Cita recuperada",
+         data: book,
+      });
+   } catch (error) {
+      res.status(500).json({
+         success: false,
+         message: "Error al recuperar cita",
+         error: error.message,
+      });
+   }
+};
 module.exports = appointmentController;
