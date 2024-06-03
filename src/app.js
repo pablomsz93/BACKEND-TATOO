@@ -16,30 +16,6 @@ app.use("/api", apiRoutes);
 
 
 
-
-
-app.get("/api/users/email=ejemplo@ejemplo.com", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Filtar usuario por email",
-  });
-});
-
-
-app.put("/api/users/:id/role", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Cambiando role",
-  });
-});
-
-app.post("/api/appointments", (req, res) => {
-  res.status(201).json({
-    sucess: true,
-    message: "Cita creada",
-  });
-});
-
 app.put("/api/appointments", (req, res) => {
   res.status(200).json({
     sucess: true,

@@ -3,23 +3,23 @@ module.exports = (...allowedRoles) => {
       const userRoleName = req.tokenData ? req.tokenData.userRoleName : undefined;
 
  
-       // Roles that always have access
+       
        const adminGroupRoles = ["super-admin"];
  
-       // Access if user belongs to admin group
+       
        if (adminGroupRoles.includes(userRoleName)) {
           return next();
        }
  
-       // Access if the user role is in the allowed roles
+       
        if (allowedRoles.includes(userRoleName)) {
           return next();
        }
  
-       // If nome of the condition are met, reject the request
+       
        res.status(403).json({
           success: true,
-          message: "Unauthorized access",
+          message: "Acceso no autorizado",
        });
     };
  };

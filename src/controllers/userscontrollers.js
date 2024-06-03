@@ -1,4 +1,4 @@
-const { User, Role } = require("../models");
+const { User} = require("../models");
 const bcrypt = require("bcrypt");
 
 const userController = {}

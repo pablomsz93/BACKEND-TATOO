@@ -6,13 +6,13 @@ module.exports = (req, res, next) => {
    if (!token)
       return res.status(401).json({
          success: true,
-         message: "Unauthorized",
+         message: "No autorizado",
       });
 
    try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
-      // Modify request object to include payload
+      
       req.tokenData = {
          userId: decoded.userId,
          userRoleName: decoded.userRoleName,
@@ -22,7 +22,7 @@ module.exports = (req, res, next) => {
    } catch (error) {
       res.status(401).json({
          success: true,
-         message: "Invalid token provided",
+         message: "Token no valido",
       });
    }
 };
