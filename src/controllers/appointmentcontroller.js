@@ -92,4 +92,26 @@ appointmentController.getById = async (req, res) => {
       });
    }
 };
+
+
+
+appointmentController.getAll = async (req, res) => {
+   try {
+      const appointments = await Appointment.findAll();
+
+      res.status(200).json({
+         success: true,
+         message: "Ver citas",
+         data: appointments,
+      });
+   } catch (error) {
+      res.status(500).json({
+         success: false,
+         message: "Error al ver citas",
+         error: error.message,
+      });
+   }
+};
+
+
 module.exports = appointmentController;
