@@ -16,12 +16,6 @@ app.use("/api", apiRoutes);
 
 
 
-app.put("/api/appointments", (req, res) => {
-  res.status(200).json({
-    sucess: true,
-    message: "Cita actualizada",
-  });
-});
 
 app.get("/api/appointments/:id", (req, res) => {
   res.status(200).json({

@@ -34,5 +34,30 @@ appointmentController.create
  }
 };
 
+appointmentController.update = async (req, res) => {
+   console.log("update");
+   const appointmentId = req.params.id;
+   const appointmentData = req.body;
+
+   try {
+      await Appointment.update(appointmentData, {
+         where: {
+            id: appointmentId,
+         },
+      });
+
+      res.status(200).json({
+         success: true,
+         message: "Cita acutalizada correctamente",
+      });
+   } catch (error) {
+      res.status(500).json({
+         success: false,
+         message: "Error al actualizar cita",
+         error: error.message,
+      });
+   }
+};
+
 
 module.exports = appointmentController;
