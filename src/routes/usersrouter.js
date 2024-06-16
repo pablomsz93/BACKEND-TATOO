@@ -6,10 +6,10 @@ const authorize = require("../middlewares/authorize");
 
 
 
-router.get("/", control.getAll);
+router.get("/",auth,authorize("super-admin"), control.getAll);
 router.get("/profile", auth, control.getUserProfile);
-router.put("/profile,",auth,control.updateUserProfile)
-router.delete("/:id", authorize("super-admin"), auth, control.delete);
+router.put("/profile",auth,control.updateUserProfile)
+router.delete("/:id", auth,authorize("super-admin"),  control.delete);
 
 
 module.exports = router;

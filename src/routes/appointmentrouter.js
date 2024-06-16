@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const control = require("../controllers/appointmentcontroller");
+const auth = require("../middlewares/auth");
 
-router.post("/", control.create)
-router.put("/", control.update)
-router.get("/:id", control.getById)
-router.get("/", control.getAll)
+router.post("/",auth, control.create)
+router.put("/:id",auth, control.update)
+router.get("/:id",auth, control.getById)
+router.get("/",auth, control.getAll)
 
 
 
